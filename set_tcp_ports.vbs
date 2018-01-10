@@ -4,12 +4,7 @@ set wmiComputer = GetObject( _
 set tcpProperties = wmiComputer.ExecQuery( _
     "select * from ServerNetworkProtocolProperty " _
     & "where InstanceName='SQLEXPRESS' and " _
-    & "(ProtocolName='Tcp' and IPAddressName='IP1') or" _
-	& "(ProtocolName='Tcp' and IPAddressName='IP2') or" _
-	& "(ProtocolName='Tcp' and IPAddressName='IP3') or" _
-	& "(ProtocolName='Tcp' and IPAddressName='IP4') or" _ 
-	& "(ProtocolName='Tcp' and IPAddressName='IP5') or" _ 
-	& "(ProtocolName='Tcp' and IPAddressName='IPAll')")
+    & "(ProtocolName='Tcp' and IPAddressName='IP%')"
 
 for each tcpProperty in tcpProperties
     dim requestedValue
