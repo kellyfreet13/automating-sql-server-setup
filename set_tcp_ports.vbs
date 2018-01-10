@@ -2,10 +2,9 @@ set wmiComputer = GetObject( _
     "winmgmts:" _
     & "\\.\root\Microsoft\SqlServer\ComputerManagement13")
 set tcpProperties = wmiComputer.ExecQuery( _
-    "select * from ServerNetworkProtocolProperty " _
-    & "where InstanceName='SQLEXPRESS' and " _
-    & "(ProtocolName='Tcp' and IPAddressName='IP%')"
-
+    "SELECT * FROM ServerNetworkProtocolProperty " _
+    & "WHERE InstanceName='SQLEXPRESS' AND " _
+    & "ProtocolName='Tcp' AND (IPAddressName LIKE 'IP%')")
 for each tcpProperty in tcpProperties
     dim requestedValue
 
