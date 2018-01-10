@@ -1,0 +1,1 @@
+﻿Invoke-Sqlcmd -S localhost -i .\setupMixedMode.sql
