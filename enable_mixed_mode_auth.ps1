@@ -1,1 +1,1 @@
-﻿Invoke-Sqlcmd -S localhost -i .\setupMixedMode.sql
+﻿Invoke-Sqlcmd -ServerInstance localhost -inputFile .\setup_mixed_mode.sql
